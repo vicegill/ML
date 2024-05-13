@@ -1,34 +1,33 @@
 initialize() {
-    initializeMutationRate(0);
-    initializeRecombinationRate(recombination_rate);
-    initializeTreeSeq();
+    initializeMutationRate(0);  # Initialize mutation rate to 0
+    initializeRecombinationRate(recombination_rate);  # Initialize recombination rate
+    initializeTreeSeq();  # Initialize TreeSeq for recording genealogies
 
-    initializeMutationType("m1", 0.5, "f", 0.0);
+    initializeMutationType("m1", 0.5, "f", 0.0);  # Initialize mutation type with name "m1", mutation rate 0.5, effect "f", and selection coefficient 0.0
 
-    initializeGenomicElementType("g1", m1, 1.0);
-    initializeGenomicElement(g1, 0, sequence_length);
+    initializeGenomicElementType("g1", m1, 1.0);  # Initialize genomic element type with name "g1", using mutation type "m1", and relative probability 1.0
+    initializeGenomicElement(g1, 0, sequence_length);  # Initialize genomic element "g1" with index 0 and sequence length defined elsewhere
 }
 
 1 early() {
-    defineConstant("simID", getSeed());
-    sim.addSubpop("p1", population_size);
+    defineConstant("simID", getSeed());  # Define constant "simID" as the simulation seed
+    sim.addSubpop("p1", population_size);  # Add subpopulation "p1" with specified size
 }
 
 5000 early() {
     // Bottleneck event
-    bottleneck_in = 1 - bottleneck_intensity;
-    bottleneck_size = asInteger(population_size * bottleneck_in);
-    p1.setSubpopulationSize(bottleneck_size);
-    cat("Bottleneck Size is  : -  " + bottleneck_size);
+    bottleneck_in = 1 - bottleneck_intensity;  # Calculate bottleneck intensity
+    bottleneck_size = asInteger(population_size * bottleneck_in);  # Calculate bottleneck size
+    p1.setSubpopulationSize(bottleneck_size);  # Set subpopulation size to bottleneck size
+    cat("Bottleneck Size is  : -  " + bottleneck_size);  # Print bottleneck size
 }
 
 7000 early() {
-
-    p1.setSubpopulationSize(population_size);
+    p1.setSubpopulationSize(population_size);  # Restore subpopulation size to original size
 }
 
 when_bottleneck late() {
     // Output TreeSeq data
-    sim.treeSeqOutput(paste0("output/output_bottleneck/bottleneck_trees/bottleneck_", bottleneck_intensity, ".trees"));
-    sim.simulationFinished();
+    sim.treeSeqOutput(paste0("output/output_bottleneck/bottleneck_trees/bottleneck_", bottleneck_intensity, ".trees"));  # Output TreeSeq data to file
+    sim.simulationFinished();  # Finish simulation
 }

@@ -1,7 +1,7 @@
 # config.yaml
 
 factors:
-  mutation_rate: 1.0e-8
+  mutation_rate: 1.0e-8 ## mutation rate per bp per gen
   recombination_rate: 3.0e-9 # Arbitary but intentionally kept 1 order lower than mutation rate
   population_size : 50000 # diploid so become 100000
   keep_individual : 50 # diploid so in turn become 100
