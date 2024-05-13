@@ -1,12 +1,15 @@
 factors:
-  dominance_coeffecient: 0.5
-  half_of_the_sequence: 49999
-  highest_s: 1.0
-  keep_individual: 50
-  lowest_s: 0.001
-  mutation_rate: 1.0e-08
-  num_of_data: 5000
-  population_size: 50000
-  recombination_rate: 1.0e-08
-  sequence_length: 100000
-  when_selection: 4999
+  dominance_coeffecient: 0.5 # Dominance coefficient of the selective mutation
+  highest_s: 1.0 # Highest selective coefficient
+  lowest_s: 0.001 # Lowest SeletivE coefficient 
+  keep_individual: 50 # Number of sampled individuals
+  mutation_rate: 1.0e-08 # Muatation rate per bp per gen
+  num_of_data: 5000 # Number of independent simulation runs
+  population_size: 50000 # Total Population size 
+  recombination_rate: 1.0e-08 # Recombination rate per bp per gen
+  sequence_length: 100000 # Sequence length of genomic element
+  half_of_the_sequence: 49999 # Half of the full genomic element (the counting start from 0)
+  when_selection: 4999 # Generations before (compared to the present) when selection happen
+
+
+  
