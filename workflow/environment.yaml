@@ -1,0 +1,14 @@
+## To install the specific package to the conda environment
+
+name: snakemake
+channels:
+  - defaults
+  - bioconda
+  - conda-forge
+dependencies:
+  - ipykernel=6.26.0
+  - ipython=8.14.0
+  - graphviz=2.50.0
+  - papermill=2.4.0
+  - python=3.11.6
+  - gsl=0.0.3

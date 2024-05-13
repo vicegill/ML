@@ -1,0 +1,34 @@
+initialize() {
+    initializeMutationRate(0);
+    initializeRecombinationRate(recombination_rate);
+    initializeTreeSeq();
+
+    initializeMutationType("m1", 0.5, "f", 0.0);
+
+    initializeGenomicElementType("g1", m1, 1.0);
+    initializeGenomicElement(g1, 0, sequence_length);
+}
+
+1 early() {
+    defineConstant("simID", getSeed());
+    sim.addSubpop("p1", population_size);
+}
+
+5000 early() {
+    // Bottleneck event
+    bottleneck_in = 1 - bottleneck_intensity;
+    bottleneck_size = asInteger(population_size * bottleneck_in);
+    p1.setSubpopulationSize(bottleneck_size);
+    cat("Bottleneck Size is  : -  " + bottleneck_size);
+}
+
+7000 early() {
+
+    p1.setSubpopulationSize(population_size);
+}
+
+when_bottleneck late() {
+    // Output TreeSeq data
+    sim.treeSeqOutput(paste0("output/output_bottleneck/bottleneck_trees/bottleneck_", bottleneck_intensity, ".trees"));
+    sim.simulationFinished();
+}
