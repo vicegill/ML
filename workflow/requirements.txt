@@ -1,0 +1,10 @@
+# The required python packages and their version
+numpy==1.24.3
+msprime==1.2.0
+tskit==0.5.6
+pyslim==1.0.4
+pandas==2.0.2
+matplotlib==3.8.1
+Ipython==8.14.0
+ploomber-engine==0.0.31
+Bio==1.6.2

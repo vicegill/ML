@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 10;
+            padding: 0;
+            height: 100vh;
+            background: url("{{ url_for('static', filename='submitted.gif')}}") center center fixed;
+            background-size: cover;
+            display: flex;
+            place-items: center;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        h1 {
+            background-color: rgb(255, 255, 255); /* Adjust the opacity as needed */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+            display: flex;
+            margin : 645px;
+            margin-top: 1300px;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .submitted-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .submitted-info img {
+            width: 100%;
+            max-width: 200px; /* Adjust the maximum width of the image */
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Submitted</h1>
+    <script>
+        setTimeout(function() {
+            window.open('', '_self', ''); 
+            window.close(); // This line attempts to close the window
+        }, 5000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+factors:
+  dominance_coeffecient: 0.5
+  half_of_the_sequence: 49999
+  highest_s: 1.0
+  keep_individual: 50
+  lowest_s: 0.001
+  mutation_rate: 1.0e-08
+  num_of_data: 5000
+  population_size: 50000
+  recombination_rate: 1.0e-08
+  sequence_length: 100000
+  when_selection: 4999

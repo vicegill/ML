@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parameter Upload</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 10;
+            padding: 0;
+            height: 100vh;
+            background: url("{{ url_for('static', filename='background.jpg')}}") center center fixed;
+            background-size: cover;
+            display: flex;
+            place-items: center;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+        
+        h1 {
+            background-color: rgba(60, 169, 181, 0.8); /* Adjust the opacity as needed */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px;
+            width: 100%;
+            margin-left: 600px;
+            margin-top: 200px;
+        }
+
+        .developer-info {
+            position: fixed;
+            bottom: 10px;
+            left: 100px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8); /* Adjust the opacity as needed */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .developer-info a {
+            color: #333; /* Link color */
+            text-decoration: none;
+            margin-right: 10px;
+            background-color: rgba(142, 186, 122, 0.8); /* Adjust the opacity as needed */
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            background-color: #ded6ae;
+            padding: 4px;
+            border-radius: 4px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Parameters</h1>
+
+    <form action="/bottleneck" method="post" id="parameterForm">
+        <label for="mutation_rate">Mutation Rate:</label>
+        <input type="text" id="mutation_rate" name="mutation_rate" value="{{ factors.mutation_rate }}"><br>
+
+        <label for="recombination_rate">Recombination Rate:</label>
+        <input type="text" id="recombination_rate" name="recombination_rate" value="{{ factors.recombination_rate }}"><br>
+
+        <label for="population_size">Population Size:</label>
+        <input type="text" id="population_size" name="population_size" value="{{ factors.population_size }}"><br>
+
+        <label for="keep_individual">Keep Individual:</label>
+        <input type="text" id="keep_individual" name="keep_individual" value="{{ factors.keep_individual }}"><br>
+
+        <label for="sequence_length">Sequence Length:</label>
+        <input type="text" id="sequence_length" name="sequence_length" value="{{ factors.sequence_length }}"><br>
+
+        <label for="bottleneck_intensity">Bottleneck Intensity:</label>
+        <input type="text" id="bottleneck_intensity" name="bottleneck_intensity" value="{{factors.bottleneck_intensity}}"><br>
+
+        <label for="bottleneck_point">Bottleneck Pont:</label>
+        <input type="text" id="bottleneck_point" name="bottleneck_point" value="{{ factors.bottleneck_point }}"><br>
+
+        <label for="num_replicates">Number of Replicates:</label>
+        <input type="text" id="num_replicates" name="num_replicates" value="{{ factors.num_replicates }}"><br>
+
+        <label for="lowest_i">Lowest Intensity of Bottleneck:</label>
+        <input type="text" id="lowest_s" name="lowest_i" value="{{ factors.lowest_i }}"><br>
+
+        <label for="highest_i">Highesr Intensity of Bottleneck:</label>
+        <input type="text" id="highest_s" name="highest_i" value="{{ factors.highest_i }}"><br>
+
+        <label for="num_of_data">Number of Data:</label>
+        <input type="text" id="num_of_data" name="num_of_data" value="{{ factors.num_of_data }}"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <div class="developer-info">
+        <p>Developed by: Jaskaran Singh Gill, Metzler Lab</p>
+        <a href="https://github.com/vicegill" target="_blank">GitHub</a>
+        <a href="https://www.linkedin.com/in/vice-gill/" target="_blank">Linkedin</a>
+    </div>
+
+
+    <script>
+        const form = document.getElementById('parameterForm');
+        const body = document.body;
+    
+        form.addEventListener('mouseover', function(event) {
+            const selectedOption = event.target.id; // Use id attribute to identify the selected input
+            updateBackground(selectedOption);
+        });
+    
+        function updateBackground(selectedOption) {
+            switch (selectedOption) {
+                case 'mutation_rate':
+                    body.style.background = 'url("{{ url_for('static', filename='mutation_rate.jpg')}}") center center fixed';
+                    break;
+                case 'recombination_rate':
+                    body.style.background = 'url("{{ url_for('static', filename='Alanturing.webp')}}") center center fixed';
+                    break;
+                case 'bottleneck_intensity':
+                    body.style.background = 'url("{{ url_for('static', filename='bottleneck.png')}}") center center fixed';
+                    break;
+                case 'population_size':
+                    body.style.background = 'url("{{ url_for('static', filename='Michelangelo.jpg')}}") center center fixed';
+                    break;
+                case 'num_replicates':
+                    body.style.background = 'url("{{ url_for('static', filename='Fisher1946.jpeg')}}") center center fixed';
+                    break;
+                case 'keep_individual':
+                    body.style.background = 'url("{{ url_for('static', filename='felsenstein.png')}}") center center fixed';
+                    break;
+                default:
+                    body.style.background = 'url("{{ url_for('static', filename='background.jpg')}}") center center fixed';
+            }
+        }
+    </script>
+</body>
+</html>
