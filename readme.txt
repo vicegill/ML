@@ -4,6 +4,7 @@
 | |  | | (_| \__ \ ||  __/ |      | | | | | |  __/\__ \ \__ \
 |_|  |_|\__,_|___/\__\___|_|      |_| |_| |_|\___||___/_|___
 
+
 Dear Readers
 
 This repository contain the code, Material, and data used by me (Jaskaran S. Gill) during my master thesis at Dirk Metzler lab (LMU)
@@ -18,7 +19,4 @@ This repository contains different folder with each containing information as fo
 
 
 Further questions and queries can be addressed to me through my email Jaskaran.gill@evobio.eu
-
-
-
 
