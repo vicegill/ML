@@ -12,7 +12,7 @@ This repository contain the code, Material, and data used by me (Jaskaran S. Gil
 This repository contains different folder with each containing information as follows
 
 1. Workflow contain the scripts used for simulation part of the thesis and also interface application which can be used to upload parameters.
-2. Training notebooks contain the Jupyter notebooks used for training the CNN model (in total 5).
+2. Training notebooks contain the Jupyter notebooks used for training the CNN model (in total 4).
 3. Excel File contains the CNN accuracy data as well as summary coefficient data from different simulation runs contained  in two different files (selection or bottleneck file).
 4. Plots contain the plots used for the master thesis also additional plots which were not in my master thesis.
 5. Pdf of thesis which contain more detailed information about the process.
